@@ -1,6 +1,6 @@
-#Aluno
+# Aluno
 * Giovanni Machado Quintella Gama
 * RA: 247122
 
-#Curso
+# Curso
 * Engenharia de Computação
