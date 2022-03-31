@@ -1,4 +1,4 @@
-package pt.c02oo.s02classe.s03lombriga;
+package lab03.pt.c02oo.s02classe.s03lombriga;
 
 public class AppLombriga {
 
