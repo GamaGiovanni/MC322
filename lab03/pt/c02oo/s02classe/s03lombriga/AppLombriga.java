@@ -5,18 +5,25 @@ public class AppLombriga {
    public static void main(String[] args) {
       Toolkit tk = Toolkit.start();
       
+      Animacao lombriga = new Animacao("080403MCMVM");
+
       String lombrigas[] = tk.recuperaLombrigas();
       
       for (int l = 0; l < lombrigas.length; l++)
          System.out.println(lombrigas[l]);
       
       tk.gravaPasso("=====");
-      tk.gravaPasso("##O@@@##");
-      tk.gravaPasso("#O@@@###");
-      tk.gravaPasso("#O@@@@##");
-      tk.gravaPasso("O@@@@###");
-      tk.gravaPasso("@@@@O###");
-      tk.gravaPasso("#@@@@O##");
+      tk.gravaPasso(lombriga.apresenta());
+      lombriga.passo();
+      tk.gravaPasso(lombriga.apresenta());
+      lombriga.passo();
+      tk.gravaPasso(lombriga.apresenta());
+      lombriga.passo();
+      tk.gravaPasso(lombriga.apresenta());
+      lombriga.passo();
+      tk.gravaPasso(lombriga.apresenta());
+      lombriga.passo();
+      tk.gravaPasso(lombriga.apresenta());
       
       tk.stop();
    }
