@@ -1,49 +1,49 @@
-package lab03.pt.c02oo.s02classe.s03lombriga;
+
 
 public class AquarioLombriga {
-    int aqua, tamanho, pos_ini;
+    int aqua, tamanho, posIni;
     int inverter = 0; 
     /* Usado na a função inverter, se seu valor for 1 a cabeça estará orientada para a direita, caso seja 0 estará para a esquerda*/
 
-    AquarioLombriga(int aqua, int tamanho, int pos_ini){
+    AquarioLombriga(int aqua, int tamanho, int posIni){
         this.aqua = aqua;
         if(tamanho > aqua)
             this.tamanho = aqua;
         else
             this.tamanho = tamanho;
-        if(pos_ini > aqua || pos_ini + tamanho > aqua)
-            this.pos_ini = 1;
+        if(posIni > aqua || posIni + tamanho > aqua)
+            this.posIni = 1;
         else
-            this.pos_ini = pos_ini;
+            this.posIni = posIni;
     }
 
     void crescer(){
         if(inverter == 0){
-            if(aqua - pos_ini - tamanho > 0)
+            if(aqua - posIni - tamanho > 0)
                 tamanho++;
         }
         else{
-            if(pos_ini - tamanho > 0)
+            if(posIni - tamanho > 0)
                 tamanho++;
         }
     }
 
     void virar(){
         inverter = 1;
-        pos_ini = pos_ini + tamanho - 1;
+        posIni = posIni + tamanho - 1;
     }
 
     void mover(){
         if(inverter == 0){
-            if(pos_ini > 1)
-                pos_ini--;
+            if(posIni > 1)
+                posIni--;
             else
                 virar();
         }
         
         else{
-            if(pos_ini < aqua)
-                pos_ini++;
+            if(posIni < aqua)
+                posIni++;
             else
                 virar();
         }
@@ -54,24 +54,24 @@ public class AquarioLombriga {
 
         for(int i = 1; i <= aqua; i++){
             if(inverter == 0){
-                if(i < pos_ini)
+                if(i < posIni)
                     atual = atual.concat("#");
-                else if(i == pos_ini)
+                else if(i == posIni)
                     atual = atual.concat("O");
-                else if(i - pos_ini < tamanho)
+                else if(i - posIni < tamanho)
                     atual = atual.concat("@");
                 else
                     atual =atual.concat("#");
             }
 
             else{
-                if(i <= pos_ini - tamanho)
+                if(i <= posIni - tamanho)
                     atual = atual.concat("#");
-                else if(i == pos_ini)
+                else if(i == posIni)
                     atual = atual.concat("O");
-                else if(i > pos_ini)
+                else if(i > posIni)
                     atual = atual.concat("#");
-                else if(i >= pos_ini - tamanho)
+                else if(i >= posIni - tamanho)
                     atual = atual.concat("@");
             }
         }

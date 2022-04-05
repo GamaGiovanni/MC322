@@ -1,31 +1,21 @@
-package lab03.pt.c02oo.s02classe.s03lombriga;
+
 
 public class AppLombriga {
 
    public static void main(String[] args) {
       Toolkit tk = Toolkit.start();
-      
-      Animacao lombriga = new Animacao("080403MCMVM");
-
       String lombrigas[] = tk.recuperaLombrigas();
       
-      for (int l = 0; l < lombrigas.length; l++)
+      for (int l = 0; l < lombrigas.length; l++){
          System.out.println(lombrigas[l]);
-      
-      tk.gravaPasso("=====");
-      tk.gravaPasso(lombriga.apresenta());
-      lombriga.passo();
-      tk.gravaPasso(lombriga.apresenta());
-      lombriga.passo();
-      tk.gravaPasso(lombriga.apresenta());
-      lombriga.passo();
-      tk.gravaPasso(lombriga.apresenta());
-      lombriga.passo();
-      tk.gravaPasso(lombriga.apresenta());
-      lombriga.passo();
-      tk.gravaPasso(lombriga.apresenta());
-      
+         Animacao lombriga = new Animacao(lombrigas[l]);
+         tk.gravaPasso("=====");
+         tk.gravaPasso(lombriga.apresenta());
+         for(int i = 0; i < lombrigas[l].length()-6; i++){
+            lombriga.passo();
+            tk.gravaPasso(lombriga.apresenta());
+         }
+      }
       tk.stop();
    }
-
 }

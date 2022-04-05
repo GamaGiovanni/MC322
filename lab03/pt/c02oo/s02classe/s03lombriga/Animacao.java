@@ -1,4 +1,4 @@
-package lab03.pt.c02oo.s02classe.s03lombriga;
+
 
 public class Animacao {
     AquarioLombriga lombriga;
@@ -17,13 +17,15 @@ public class Animacao {
     }
 
     void passo(){
-        char aux = animacoes.charAt(0);
-        if(aux == "C".charAt(0))
-            lombriga.crescer();
-        else if(aux == "M".charAt(0))
-            lombriga.mover();
-        else
-            lombriga.virar();
-        animacoes = animacoes.substring(1, animacoes.length());
+        if(animacoes != ""){
+            char aux = animacoes.charAt(0);
+            if(aux == "C".charAt(0))
+                lombriga.crescer();
+            else if(aux == "M".charAt(0))
+                lombriga.mover();
+            else
+                lombriga.virar();
+            animacoes = animacoes.substring(1, animacoes.length());
+        }
     }
 }
