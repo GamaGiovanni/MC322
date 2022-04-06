@@ -1,5 +1,3 @@
-
-
 public class AquarioLombriga {
     int aqua, tamanho, posIni;
     int inverter = 0; 
@@ -19,7 +17,7 @@ public class AquarioLombriga {
 
     void crescer(){
         if(inverter == 0){
-            if(aqua - posIni - tamanho > 0)
+            if(aqua + 1 - posIni - tamanho > 0)
                 tamanho++;
         }
         else{
@@ -29,8 +27,14 @@ public class AquarioLombriga {
     }
 
     void virar(){
-        inverter = 1;
-        posIni = posIni + tamanho - 1;
+        if(inverter == 0){
+            inverter = 1;
+            posIni = posIni + tamanho - 1;
+        }
+        else{
+            inverter = 0;
+            posIni = posIni - tamanho + 1;
+        }
     }
 
     void mover(){

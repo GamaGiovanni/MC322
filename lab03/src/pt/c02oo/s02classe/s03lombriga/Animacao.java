@@ -1,5 +1,3 @@
-
-
 public class Animacao {
     AquarioLombriga lombriga;
     String dados, animacoes;
