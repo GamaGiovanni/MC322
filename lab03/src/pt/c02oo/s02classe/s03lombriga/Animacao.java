@@ -1,3 +1,4 @@
+package pt.c02oo.s02classe.s03lombriga;
 public class Animacao {
     AquarioLombriga lombriga;
     String dados, animacoes;
