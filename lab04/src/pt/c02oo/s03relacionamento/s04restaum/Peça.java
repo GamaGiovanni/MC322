@@ -33,7 +33,7 @@ public class Peça {
 
             if(!tab.temPeca(iProx, jProx)){ //Não há peça para o local aonde queremos mover esta peça
 
-                if(i - iProx + j - jProx == 2 || i - iProx + j - jProx == -2){ //A posição designada fica a 2 "casas" da atual
+                if(i - iProx + j - jProx == 2 || i - iProx + j - jProx == -2 && i == iProx || j == jProx){ //A posição designada fica a 2 "casas" da atual e esta na mesma linha ou coluna
 
                     if(tab.temPeca((i + iProx)/2, (j + jProx)/2)){ //Se tem uma peca entre a posicao atual e a designada
                         
