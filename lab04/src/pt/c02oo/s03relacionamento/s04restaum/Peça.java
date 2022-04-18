@@ -31,7 +31,7 @@ public class Peça {
 
         if(simbolo == 'P'){ //Esta é uma peça válida
 
-            if(!tab.temPeca(iProx, jProx)){ //Não há peça para o local aonde queremos mover esta peça
+            if(!tab.temPeca(iProx, jProx) && tab.getSimboloPeca(iProx, jProx) == '-'){ //Não há peça para o local aonde queremos mover esta peça e é uma posicao valida
 
                 if(i - iProx + j - jProx == 2 || i - iProx + j - jProx == -2 && i == iProx || j == jProx){ //A posição designada fica a 2 "casas" da atual e esta na mesma linha ou coluna
 
